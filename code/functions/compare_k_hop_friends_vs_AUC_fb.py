@@ -47,7 +47,7 @@ if __name__=="__main__":
             tag = f.replace(args.file_ext, '')
             print tag
             j=j+1
-            if (tag!='schools'):# and (tag=='Amherst41' or tag=='Vanderbilt48' or tag == 'Mich67' or tag == 'Caltech36'):
+            if (tag!='schools'):
                 print "Processing %s..." % tag
                 input_file = path_join(code_path, f)
                 
