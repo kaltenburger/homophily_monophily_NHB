@@ -15,7 +15,7 @@ def majority_vote_modified(num_unlabeled, membership_y,feature_x, num_iter, cv_s
     mean_wt_auc = []
     se_wt_auc = []
     for i in range(len(num_unlabeled)):
-        print num_unlabeled[i]
+        print(num_unlabeled[i])
         accuracy = []
         accuracy0 = []
         accuracy1 = []

@@ -11,7 +11,7 @@ def LINK(num_unlabeled, membership_y, feature_x, clf, num_iter, cv_setup=None):
     mean_wt_auc = []
     se_wt_auc = []
     for i in range(len(num_unlabeled)):
-        print num_unlabeled[i]
+        print(num_unlabeled[i])
         if cv_setup=='stratified':
             k_fold = cross_validation.StratifiedShuffleSplit((membership_y), n_iter=num_iter,
                                                test_size=num_unlabeled[i],

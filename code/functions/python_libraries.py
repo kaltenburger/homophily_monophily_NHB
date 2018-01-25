@@ -4,7 +4,7 @@ from __future__ import division
 import argparse
 from collections import Counter
 import csv
-import igraph
+#import igraph
 import itertools
 import json
 import matplotlib.pyplot as plt

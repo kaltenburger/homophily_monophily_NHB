@@ -61,15 +61,15 @@ def create_affiliation_model_temp(average_node_degree,
     ### BLOCK STRUCTURE
     ## define p_in; p_out
     p_in = (lambda_block_parameter * average_node_degree)/N
-    print 'p_in: ', p_in
+    print('p_in: ', p_in)
     #previous parameterization
     denominator = []
     for j in range(len(class_size_vect)):
         denominator.append(class_size_vect[j] * class_size_vect[~j])
     denom = np.sum(denominator)
     p_out = (average_node_degree * N - np.sum(class_size_vect**2 * p_in))/denom
-    print 'p_out: ', p_out
-    print ''
+    print('p_out: ', p_out)
+    print('')
 
     ## Expected Degree Sequence for nodes in class 1,2,...k
     ## Generates in-class degree sequence and out-class sequence
@@ -100,15 +100,15 @@ def create_affiliation_model_temp(average_node_degree,
     Adj_corrected = np.matrix(np.triu(A_ij_tmp, k=0) + np.transpose(np.triu(A_ij_tmp, k=1)))
     Membership = np.concatenate(map(np.tile,np.array(range(len(class_size_vect))), class_size_vect),0)
 
-    print 'spot-check average degree: '
-    print np.mean(np.sum(np.matrix(Adj_corrected), axis=1))
-    print ''
+    print('spot-check average degree: ')
+    print(np.mean(np.sum(np.matrix(Adj_corrected), axis=1)))
+    print('')
 
-    print 'spot-check homophily: '
-    print homophily_index_Jackson_alternative(np.matrix(Adj_corrected), np.array(Membership))
-    print ''
+    print('spot-check homophily: ')
+    print(homophily_index_Jackson_alternative(np.matrix(Adj_corrected), np.array(Membership)))
+    print('')
 
-    print 'spot-check monophily: '
-    print monophily_index_overdispersion_Williams(np.matrix(Adj_corrected), np.array(Membership))
-    print ''
+    print('spot-check monophily: ')
+    print(monophily_index_overdispersion_Williams(np.matrix(Adj_corrected), np.array(Membership)))
+    print('')
     return( Adj_corrected, Membership)

@@ -16,7 +16,7 @@ def random_classifier(adj_matrix_input, Membership, num_unlabeled, num_iter, cv_
     se_accuracy_initially_labeled = []
 
     for i in range(len(num_unlabeled)):
-        print num_unlabeled[i]
+        print(num_unlabeled[i])
         if cv_setup=='stratified':
             k_fold = cross_validation.StratifiedShuffleSplit((Membership), n_iter=num_iter,
                                                              test_size=num_unlabeled[i],

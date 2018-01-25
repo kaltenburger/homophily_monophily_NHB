@@ -18,7 +18,7 @@ def majority_vote_finalized(num_unlabeled, membership_y,feature_x, num_iter, cv_
     se_wt_auc = []
 
     for i in range(len(num_unlabeled)):
-        print num_unlabeled[i]
+        print(num_unlabeled[i])
         accuracy = []
         micro_auc = []
         wt_auc = []

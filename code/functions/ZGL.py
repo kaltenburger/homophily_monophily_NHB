@@ -37,7 +37,7 @@ def ZGL_finalized(feature_x, membership_y, num_unlabeled, num_iter, cv_setup=Non
 
     
     for i in range(len(percent_initially_labelled)):
-        print num_unlabeled[i]
+        print(num_unlabeled[i])
         
         if cv_setup=='stratified':
             k_fold = cross_validation.StratifiedShuffleSplit((membership_y_update), n_iter=num_iter,
@@ -82,7 +82,7 @@ def ZGL_finalized(feature_x, membership_y, num_unlabeled, num_iter, cv_setup=Non
             l = len(train) # number of labeled points
             u = len(test) # number of unlabeled points
             
-            ## compute (5) in ZGL paper
+            ## compute Equation (5) in ZGL paper
             W_ll = W[0:l,0:l]
             W_lu = W[0:l,l:(l+u)]
             W_ul = W[l:(l+u),0:l]
@@ -142,6 +142,6 @@ def ZGL_finalized(feature_x, membership_y, num_unlabeled, num_iter, cv_setup=Non
         se_micro_auc.append(np.std(micro_auc))
         mean_wt_auc.append(np.mean(wt_auc))
         se_wt_auc.append(np.std(wt_auc))
-    return(mean_accuracy, se_accuracy, mean_micro_auc,se_micro_auc, mean_wt_auc,se_wt_auc)
+    return(mean_accuracy, se_accuracy, mean_micro_auc, se_micro_auc, mean_wt_auc,se_wt_auc)
 
 
