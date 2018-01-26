@@ -15,11 +15,11 @@ This repository set-up assumes that the FB100 (raw .mat files) and Add Health da
 2. Update file paths to your local directory settings in the following programs as indicated at the beginning of notebooks for setting file-paths.
     
 3. Run code which is briefly described below:
-   * 0_oSBM/ - includes all relevant code for oSBM
+   * 0_oSBM/ - includes notebooks for code related to simulations of oSBM graphs.
    * 1_analyze_FB100_AddHealth_Noordin_PolBlogs/ - includes all relevant code for data analysis presented in main paper and SI.
-   * functions/compare_*.py - scripts for creating k-hop figures (AUC or proportion same)
+   * functions/compare_*.py - scripts for creating k-hop figures (AUC or proportion same).
 
-All random number generators used in the analysis have been seeded deterministically to produce persistent cross-validation folds and thereby consistent results when re-running the analysis. The code for generating random graphs (sampled from the overdispersed stochastic block model) is not deterministically seeded. All code is run with Python 2.7.12 and the versions for the following main Python libraries:  igraph (0.7.1), networkx (1.9.1), numpy (1.13.3), pandas (0.20.3), rpy2 (2.8.5),  and sklearn (0.18.1).
+All random number generators used in the analysis have been seeded deterministically to produce persistent cross-validation folds and thereby consistent results when re-running the analysis. The code for generating random graphs (sampled from the overdispersed stochastic block model) is not deterministically seeded. All code was written and tested for Python 2.7.12 with versions for the following main Python libraries:  networkx (1.9.1), numpy (1.13.3), pandas (0.20.3), rpy2 (2.8.5), sklearn (0.18.1), matplotlib(1.5.1), openpyxl (2.5.0), and xlrd (1.1.0). The code has know incompatibilities with Python 3.x and with networkx 2.x.
 
 ### Authors
 * Kristen M. Altenburger, kaltenb@stanford.edu
