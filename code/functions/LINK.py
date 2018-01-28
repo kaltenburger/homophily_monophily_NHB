@@ -1,6 +1,13 @@
 from __future__ import division
 from sklearn.preprocessing import label_binarize
 
+#LINK-Logistic Regression [Zheleva, Getoor, 2009] uses labelled nodes to fit a regularized logistic regression model
+#(Supplementary Note 2.2) that interprets rows of the adjacency matrix as sparse binary feature vectors,
+#performing classification based on these features. The trained model is then applied to the feature vectors
+#(adjacency matrix rows) of unlabelled nodes, which are scored based on the probability
+# estimates from themodel.
+
+# Zheleva, E. & Getoor, L. To join or not to join: the illusion of privacy in social networks with mixed public and private user profiles. In Proceedings of the 18th International Conference on World Wide Web, 531–540 (2009).
 
 def LINK(num_unlabeled, membership_y, feature_x, clf, num_iter, cv_setup=None):
     class_labels = np.sort(np.unique(np.array(membership_y))) #unique label IDs
