@@ -4,11 +4,9 @@
 from __future__ import division
 import os
 
-## compare AUC values @k-hop for fully-labeled network, examining _all_ AH schools
+## about: compare AUC values @k-hop for fully-labeled network, examining _all_ AH schools
+## run code from 'functions' folder
 
-## how to run:
-## cd /Users/kristen/Dropbox/gender_graph_data/manuscript/nature_hb/gender_graph_final_code_NatureHB/code/functions
-## python compare_k_hop_friends_vs_AUC_add_health.py -i='/Users/kristen/Dropbox/gender_graph_data/add-health/converted_gml' -o='/Users/kristen/Dropbox/gender_graph_data/manuscript/nature_hb/gender_graph_final_code_NatureHB/data/output'
 import os
 folder_directory =os.getcwd()
 print(folder_directory)
@@ -18,6 +16,7 @@ execfile('python_libraries.py')
 execfile('create_adjacency_matrix.py')
 execfile('parsing.py')  # Sam Way's Code
 execfile('mixing.py')   # Sam Way's Code
+execfile('define_paths.py')
 
 def interface():
     args = argparse.ArgumentParser()
@@ -39,7 +38,7 @@ if __name__=="__main__":
     writer = csv.writer(file_output)
     writer.writerow( ('school', 'k_hop', 'auc_in_khop_neighborhood', 'count_0_friends_khop_class1','count_0_friends_khop_class2'))
                       
-    os.chdir('/Users/kristen/Dropbox/gender_graph_data/add-health/converted_gml/')
+    os.chdir(add_health_converted_gml)
     for f in listdir(args.input_dir):
         if f.endswith(args.file_ext):
             tag = f.replace(args.file_ext, '')

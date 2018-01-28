@@ -1,24 +1,16 @@
 from __future__ import division
 import os
 ## about: compute homophily/monophily across FB100 dataset
-
-## how to run:
-## cd /Users/kristen/Documents/gender_graph_code/code/0_analyze_FB100_AddHealth/
-## python c_facebook_script_homophily_monophily.py -i='/Users/kristen/Dropbox/gender_graph_data/manuscript/code/fb_processing/data' -o='/Users/kristen/Documents/gender_graph_code/data/'
-
-## how to run on soal
-## OLD: python compare_k_hop_friends_vs_AUC.py -i='/home/kaltenb/gender-graph/data' -o='/home/kaltenb/gender-graph'
+## run code from 'functions' folder
 
 import os
-folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+folder_directory =os.getcwd()
 os.chdir(folder_directory)
 
-code_path = '/home/kaltenb/gender-graph/data/'
-
-execfile('./functions/python_libraries.py')
-execfile('./functions/create_adjacency_matrix.py')
-execfile('./functions/parsing.py')  # Sam Way's Code
-execfile('./functions/mixing.py')   # Sam Way's Code
+execfile('python_libraries.py')
+execfile('create_adjacency_matrix.py')
+execfile('parsing.py')  # Sam Way's Code
+execfile('mixing.py')   # Sam Way's Code
 
 def interface():
     args = argparse.ArgumentParser()
@@ -36,20 +28,20 @@ if __name__=="__main__":
     homophily_gender = []
     monophily_gender = []
     
-    file_output = open('../data/khop_vs_auc_Nov2017.csv', 'wt')
+    file_output = open('../../data/khop_vs_auc_Nov2017.csv', 'wt')
     j =0
     writer = csv.writer(file_output)
     writer.writerow( ('school', 'k_hop', 'auc_in_khop_neighborhood', 'count_0_friends_khop_class1','count_0_friends_khop_class2'))
                       
 
-    for f in listdir(code_path):
+    for f in listdir(fb_code_path):
         if f.endswith(args.file_ext):
             tag = f.replace(args.file_ext, '')
             print tag
             j=j+1
             if (tag!='schools'):
                 print "Processing %s..." % tag
-                input_file = path_join(code_path, f)
+                input_file = path_join(fb_code_path, f)
                 
                 ## Descriptive Statistics on Raw, Original Data
                 adj_matrix_tmp, metadata = parse_fb100_mat_file(input_file)
