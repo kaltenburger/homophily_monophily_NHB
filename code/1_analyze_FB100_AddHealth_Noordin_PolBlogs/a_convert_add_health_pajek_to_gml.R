@@ -60,5 +60,4 @@ for(files in list.files()){
   g <- igraph::delete_vertex_attr(g, 'na')
   g <- igraph::delete_edge_attr(g, 'na')
   write.graph(g, file = paste0(add_health_converted_gml, gsub(".paj", ".gml", files)),format = c('gml')) ## user sets path to location of converted files
-  #write.graph(g, file = paste0('../../converted_gml/', gsub(".paj", ".gml", files)),format = c('gml')) ## user sets path to location of converted files
 }
