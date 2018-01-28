@@ -195,7 +195,7 @@ if __name__=="__main__":
                                                                                                                      
                 (mean_accuracy_mv_amherst, se_accuracy_mv_amherst,
                  mean_micro_auc_mv_amherst,se_micro_auc_mv_amherst,
-                 mean_wt_auc_mv_amherst,se_wt_auc_mv_amherst) =majority_vote_finalized(percent_initially_unlabelled,
+                 mean_wt_auc_mv_amherst,se_wt_auc_mv_amherst) =majority_vote_modified(percent_initially_unlabelled,
                                                                                        np.array(gender_y),
                                                                                        np.array(adj_matrix_gender),
                                                                                        num_iter=n_iter)
@@ -204,7 +204,7 @@ if __name__=="__main__":
 
                 (mean_accuracy_mv2_amherst2, se_accuracy_mv2_amherst2,
                  mean_micro_auc_mv2_amherst2,se_micro_auc_mv2_amherst2,
-                 mean_wt_auc_mv2_amherst2,se_wt_auc_mv2_amherst2) =majority_vote_finalized(percent_initially_unlabelled,
+                 mean_wt_auc_mv2_amherst2,se_wt_auc_mv2_amherst2) =majority_vote_modified(percent_initially_unlabelled,
                                                                                            np.array(gender_y),
                                                                                            np.array(adj_amherst2),
                                                                                            num_iter=n_iter)

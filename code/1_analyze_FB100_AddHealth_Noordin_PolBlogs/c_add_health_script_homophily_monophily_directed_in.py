@@ -6,8 +6,8 @@ from __future__ import division
 ## codings are based on: http://moreno.ss.uci.edu/data.html#adhealth
 
 ## how to run [example]:
-## cd /Users/kristen/Dropbox/gender_graph_data/manuscript/nature_hb/gender_graph_final_code_NatureHB/code/1_analyze_FB100_AddHealth_Noordin_PolBlogs
-## python c_add_health_script_homophily_monophily_directed_in.py -i='/Users/kristen/Dropbox/gender_graph_data/add-health/converted_gml' -o='/Users/kristen/Dropbox/gender_graph_data/manuscript/nature_hb/gender_graph_final_code_NatureHB/data/output'
+## cd [Folder_Path_of_Script]
+## python c_add_health_script_homophily_monophily_directed_in.py -i=[Folder_Path_of_Converted_GML] -o=[Folder_Path_of_Output_CSV]
 
 import os
 folder_directory =os.getcwd()

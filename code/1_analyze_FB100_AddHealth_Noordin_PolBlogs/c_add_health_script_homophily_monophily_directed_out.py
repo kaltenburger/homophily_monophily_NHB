@@ -5,11 +5,9 @@ from __future__ import division
 ## for reference: [Male == 1; Female == 2, Unreported/Missing = 0]
 ## codings are based on: http://moreno.ss.uci.edu/data.html#adhealth
 
-
 ## how to run [example]:
-## cd /Users/kristen/Documents/gender_graph_final_code_NatureHB/code/0_analyze_FB100_AddHealth/
-## python c_add_health_script_homophily_monophily_directed_out.py -i='/Users/kristen/Dropbox/gender_graph_data/add-health/converted_gml' -o='/Users/kristen/Dropbox/gender_graph_data/manuscript/nature_hb/gender_graph_final_code_NatureHB/data/output'
-
+## cd [Folder_Path_of_Script]
+## python c_add_health_script_homophily_monophily_directed_in.py -i=[Folder_Path_of_Converted_GML] -o=[Folder_Path_of_Output_CSV]
 
 import os
 folder_directory =os.getcwd()

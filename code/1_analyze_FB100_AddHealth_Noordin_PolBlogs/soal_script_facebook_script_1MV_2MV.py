@@ -7,29 +7,27 @@
 # compute 1hop versus 2hop results
 
 
-## a) run on soal: python facebook_script_1MV_2MV.py -i='/home/kaltenb/gender-graph/data' -o='.'
-## a) run locally: python facebook_script_1MV_2MV.py -i='/Users/kristen/Dropbox/gender_graph_data/manuscript/code/fb_processing/data' -o='.'
+## a) run on soal: python soal_script_facebook_script_1MV_2MV.py -i='/home/kaltenb/gender-graph/data' -o='.'
+## a) run locally: python soal_script_facebook_script_1MV_2MV.py -i='/Users/kristen/Dropbox/gender_graph_data/manuscript/code/fb_processing/data' -o='.'
 
 ## b) scp soal-1.stanford.edu:/home/kaltenb/gender-graph/code/pnas_code/facebook_output_LINK.csv ~
 
 
 
 #folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+import os
 folder_directory =os.getcwd()
-
-import os
-import os
 os.chdir(folder_directory)
-execfile('./functions/python_libraries.py')
-execfile('./functions/create_adjacency_matrix.py')
-execfile('./functions/compute_homophily.py')
-execfile('./functions/compute_monophily.py')
-execfile('./functions/compute_monophily_beta_binom.py') ## 11/7/2017
-execfile('./functions/compute_chi_square.py')
-execfile('./functions/parsing.py')  # Sam Way's Code
-execfile('./functions/mixing.py')   # Sam Way's Code
-execfile('./functions/LINK.py')
-execfile('./functions/majority_vote.py')
+execfile('../functions/python_libraries.py')
+execfile('../functions/create_adjacency_matrix.py')
+execfile('../functions/compute_homophily.py')
+execfile('../functions/compute_monophily.py')
+execfile('../functions/compute_monophily_beta_binom.py') ## 11/7/2017
+execfile('../functions/compute_chi_square.py')
+execfile('../functions/parsing.py')  # Sam Way's Code
+execfile('../functions/mixing.py')   # Sam Way's Code
+execfile('../functions/LINK.py')
+execfile('../functions/majority_vote.py')
 
 
 def interface():
@@ -48,13 +46,12 @@ if __name__=="__main__":
     monophily_gender = []
 
     
-    file_output = open('../data/facebook_output_majority_vote_AUC_accuracy_Nov2017.csv', 'wt')
+    file_output = open('../../data/output/facebook_output_majority_vote_AUC_accuracy_Jan2018.csv', 'wt')
     j =0
     writer = csv.writer(file_output)
     writer.writerow( ('school', 'percent_initially_unlabeled',
                       '1_MV_gender_mean_auc_wt', '1_MV_gender_se_auc_wt', '2_MV_gender_mean_auc_wt', '2_MV_gender_se_auc_wt',
-                      '1_MV_gender_mean_auc_micro', '1_MV_gender_se_auc_micro', '2_MV_gender_mean_auc_micro', '2_MV_gender_se_auc_micro',
-                      '1_MV_gender_mean_accuracy', '1_MV_gender_se_accuracy', '2_MV_gender_mean_accuracy', '2_MV_gender_se_accuracy',))
+                      '1_MV_gender_mean_auc_micro', '1_MV_gender_se_auc_micro', '2_MV_gender_mean_auc_micro', '2_MV_gender_se_auc_micro'))
                       
     percent_initially_unlabelled = [0.5]
     percent_initially_labelled = np.subtract(1, percent_initially_unlabelled)
@@ -91,7 +88,7 @@ if __name__=="__main__":
                  mean_wt_auc_mv,se_wt_auc_mv) =majority_vote_modified(percent_initially_unlabelled,
                                                                                        np.array(gender_y),
                                                                                        np.array(adj_matrix_gender),
-                                                                                       num_iter=10)
+                                                                                       num_iter=100)
                                                                                        
                                                                                        
                 #2-hop MV
@@ -109,8 +106,7 @@ if __name__=="__main__":
 
                 writer.writerow( (tag, percent_initially_labelled[0],
                                   mean_wt_auc_mv[0], se_wt_auc_mv[0],mean_wt_auc_mv2[0], se_wt_auc_mv2[0],
-                                  mean_micro_auc_mv_amherst[0], se_micro_auc_mv[0],mean_micro_auc_mv2[0], se_micro_auc_mv2[0],
-                                  mean_accuracy_mv[0], se_accuracy_mv[0],mean_accuracy_mv2[0], se_accuracy_mv2[0],))
+                                  mean_micro_auc_mv_amherst[0], se_micro_auc_mv[0],mean_micro_auc_mv2[0], se_micro_auc_mv2[0]))
 
     file_output.close()
     print "Done!"
