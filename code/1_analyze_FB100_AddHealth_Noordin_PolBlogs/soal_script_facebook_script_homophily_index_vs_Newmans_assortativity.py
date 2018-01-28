@@ -7,7 +7,8 @@ from __future__ import division
 ## a) run on soal: python soal_script_facebook_script_homophily_index_vs_Newmans_assortativity.py -i='/home/kaltenb/gender-graph/data' -o='.'
 ## a) run locally: cd Dropbox/gender_graph_data/manuscript/pnas/pnas_code/; python facebook_script_homophily_monophily.py -i='/Users/kristen/Dropbox/gender_graph_data/manuscript/code/fb_processing/data' -o='.'
 
-folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+#folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+folder_directory =os.getcwd()
 import os
 os.chdir(folder_directory)
 execfile('./functions/python_libraries.py')

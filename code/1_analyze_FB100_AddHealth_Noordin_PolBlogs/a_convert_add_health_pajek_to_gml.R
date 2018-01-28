@@ -9,8 +9,9 @@
 
 rm(list=ls())
 
+## run script from 'code' directory
 ## note: user sets path to file location of raw add health data
-file_path_to_raw_add_health_data <-"/Users/kristen/Dropbox/gender_graph_data/add-health/cd_data/structure_nocontract/"
+source('./functions/define_paths.py')
 setwd(file_path_to_raw_add_health_data)
 
 library(intergraph)
@@ -58,6 +59,6 @@ for(files in list.files()){
   }
   g <- igraph::delete_vertex_attr(g, 'na')
   g <- igraph::delete_edge_attr(g, 'na')
-  write.graph(g, file = paste0('/Users/kristen/Desktop/converted_gml/', gsub(".paj", ".gml", files)),format = c('gml')) ## user sets path to location of converted files
+  write.graph(g, file = paste0(add_health_converted_gml, gsub(".paj", ".gml", files)),format = c('gml')) ## user sets path to location of converted files
   #write.graph(g, file = paste0('../../converted_gml/', gsub(".paj", ".gml", files)),format = c('gml')) ## user sets path to location of converted files
 }

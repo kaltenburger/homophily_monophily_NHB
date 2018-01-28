@@ -17,7 +17,8 @@ from __future__ import division
 
 ## b) how to move file from soal to corn: starting on corn - scp soal-1.stanford.edu:/home/kaltenb/gender-graph/code/pnas_output_data/facebook_homophily_monophily_output_updated.csv ~
 
-folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+#folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+folder_directory =os.getcwd()
 import os
 os.chdir(folder_directory)
 execfile('./functions/python_libraries.py')

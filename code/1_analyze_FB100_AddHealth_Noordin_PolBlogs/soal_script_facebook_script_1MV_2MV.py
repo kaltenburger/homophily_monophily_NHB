@@ -14,7 +14,8 @@
 
 
 
-folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+#folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+folder_directory =os.getcwd()
 
 import os
 import os
@@ -27,7 +28,7 @@ execfile('./functions/compute_monophily_beta_binom.py') ## 11/7/2017
 execfile('./functions/compute_chi_square.py')
 execfile('./functions/parsing.py')  # Sam Way's Code
 execfile('./functions/mixing.py')   # Sam Way's Code
-execfile('./functions/LINK_finalized.py')
+execfile('./functions/LINK.py')
 execfile('./functions/majority_vote.py')
 
 
@@ -55,7 +56,6 @@ if __name__=="__main__":
                       '1_MV_gender_mean_auc_micro', '1_MV_gender_se_auc_micro', '2_MV_gender_mean_auc_micro', '2_MV_gender_se_auc_micro',
                       '1_MV_gender_mean_accuracy', '1_MV_gender_se_accuracy', '2_MV_gender_mean_accuracy', '2_MV_gender_se_accuracy',))
                       
-    #percent_initially_unlabelled = [0.9,0.8,0.5,0.2,0.1]
     percent_initially_unlabelled = [0.5]
     percent_initially_labelled = np.subtract(1, percent_initially_unlabelled)
 
@@ -63,7 +63,7 @@ if __name__=="__main__":
         if f.endswith(args.file_ext):
             tag = f.replace(args.file_ext, '')
             j=j+1
-            if (tag!='schools'): #and (j<=3):#(tag!='Wellesley22') and (tag!='Smith60') and (tag!='Vassar85'):#and j<=2:
+            if (tag!='schools'):
                 print "Processing %s..." % tag
                 input_file = path_join(args.input_dir, f)
                 
@@ -88,7 +88,7 @@ if __name__=="__main__":
                 #1-hop MV
                 (mean_accuracy_mv, se_accuracy_mv,
                  mean_micro_auc_mv_amherst,se_micro_auc_mv,
-                 mean_wt_auc_mv,se_wt_auc_mv) =majority_vote_finalized(percent_initially_unlabelled,
+                 mean_wt_auc_mv,se_wt_auc_mv) =majority_vote_modified(percent_initially_unlabelled,
                                                                                        np.array(gender_y),
                                                                                        np.array(adj_matrix_gender),
                                                                                        num_iter=10)
@@ -101,7 +101,7 @@ if __name__=="__main__":
     
                 (mean_accuracy_mv2, se_accuracy_mv2,
                 mean_micro_auc_mv2,se_micro_auc_mv2,
-                 mean_wt_auc_mv2,se_wt_auc_mv2) =majority_vote_finalized(percent_initially_unlabelled,
+                 mean_wt_auc_mv2,se_wt_auc_mv2) =majority_vote_modified(percent_initially_unlabelled,
                                                                                np.array(gender_y),
                                                                                np.array(adj2),
                                                                                num_iter=100)

@@ -14,10 +14,10 @@ from __future__ import division
 ## a) run on soal: python soal_script_facebook_script_figures_overdispersion_prediction.py -i='/home/kaltenb/gender-graph/data' -o='.'
 ## a) run locally: cd Dropbox/gender_graph_data/manuscript/pnas/pnas_code/; python facebook_script_homophily_monophily.py -i='/Users/kristen/Dropbox/gender_graph_data/manuscript/code/fb_processing/data' -o='.'
 
+## run from 'code' subfolder
 
-## b) how to move file from soal to corn: starting on corn - scp soal-1.stanford.edu:/home/kaltenb/gender-graph/code/pnas_output_data/facebook_homophily_monophily_output_updated.csv ~
-
-folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+#folder_directory = '/home/kaltenb/gender-graph/NHB_revision_Nov2017/code' # main folder directory on SOAL
+folder_directory =os.getcwd()
 import os
 os.chdir(folder_directory)
 execfile('./functions/python_libraries.py')

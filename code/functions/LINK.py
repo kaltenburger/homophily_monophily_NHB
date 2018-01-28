@@ -7,8 +7,6 @@ from sklearn.preprocessing import label_binarize
 #(adjacency matrix rows) of unlabelled nodes, which are scored based on the probability
 # estimates from themodel.
 
-# Zheleva, E. & Getoor, L. To join or not to join: the illusion of privacy in social networks with mixed public and private user profiles. In Proceedings of the 18th International Conference on World Wide Web, 531–540 (2009).
-
 def LINK(num_unlabeled, membership_y, feature_x, clf, num_iter, cv_setup=None):
     class_labels = np.sort(np.unique(np.array(membership_y))) #unique label IDs
     mean_accuracy = []

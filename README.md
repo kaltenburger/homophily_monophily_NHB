@@ -12,7 +12,7 @@ This repository set-up assumes that the FB100 (raw .mat files) and Add Health da
 
 1. Save raw files in data/original
 
-2. Update file paths to your local directory settings in the following programs as indicated at the beginning of notebooks for setting file-paths.
+2. Update global file-paths in 'functions/define_paths.py' to your local directory settings.
     
 3. Run code which is briefly described below:
    * 0_oSBM/ - includes notebooks for code related to simulations of oSBM graphs.

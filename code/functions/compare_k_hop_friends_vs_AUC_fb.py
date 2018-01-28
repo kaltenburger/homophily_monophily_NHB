@@ -11,6 +11,7 @@ execfile('python_libraries.py')
 execfile('create_adjacency_matrix.py')
 execfile('parsing.py')  # Sam Way's Code
 execfile('mixing.py')   # Sam Way's Code
+execfile('define_paths.py')
 
 def interface():
     args = argparse.ArgumentParser()
