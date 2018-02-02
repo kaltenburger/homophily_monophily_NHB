@@ -3,7 +3,7 @@
 
 ### Documentation
 
-This repository contains all the correponding code to replicate the figures in "Bias and variance in social network structure". We provide links to the datasets (Facebook100, AddHealth, Political Blogs, and Noordin Top) in the data sub-folder.
+This repository contains all the correponding code to replicate the figures in "Monophily in social networks introduces similarity among friends-of-friends". We provide links to the datasets (Facebook100, AddHealth, Political Blogs, and Noordin Top) in the data sub-folder.
 
 
 ### Directions
