@@ -1,4 +1,4 @@
-## Replication code: "Bias and variance in social network structure"
+## Replication code: "Monophily in social networks introduces similarity among friends-of-friends"
 
 
 ### Documentation

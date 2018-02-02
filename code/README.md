@@ -1,2 +1,2 @@
 # homophily_monophily_NHB
-replication code for "Bias and variance in social network structure"
+replication code for "Monophily in social networks introduces similarity among friends-of-friends"
